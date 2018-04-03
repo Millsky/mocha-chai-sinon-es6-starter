@@ -1,0 +1,26 @@
+{
+  "name": "test-demo",
+  "version": "1.0.0",
+  "description": "A demo for all things unit-test ",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha './tests/**/*.js' --compilers js:babel-core/register",
+    "test:watch": "mocha './tests/**/*.js' --compilers js:babel-core/register --watch"
+  },
+  "keywords": [
+    "test",
+    "unit-test",
+    "mocha",
+    "chai",
+    "sinon"
+  ],
+  "author": "millsky",
+  "license": "MIT ",
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1",
+    "chai": "^4.1.2",
+    "mocha": "^5.0.5",
+    "sinon": "^4.5.0"
+  }
+}
