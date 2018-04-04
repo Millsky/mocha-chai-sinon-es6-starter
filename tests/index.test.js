@@ -3,7 +3,7 @@
  */
 import sinon from 'sinon';
 import { expect } from 'chai';
-import add, { callMyArgument, SOME_API } from '../src/index';
+import add, { callMyArgument, SOME_API, quick_Sort } from '../src/index';
 
 describe('#add', () => {
     it('Should add two small integers together', () => {
@@ -26,4 +26,31 @@ describe('#SOME_API', () => {
         const result = SOME_API.someComplicatedFunction(1, 2, 3);
         expect(result).to.equal(16);
     });
+});
+
+describe('#quick_Sort', () => {
+    it('Should sort an array of positive integers in ascending order', () => {
+        const myArray = [1, 2];
+        const result = quick_Sort(myArray);
+        expect(result).to.deep.equal([1, 2]);
+    });
+    it('Should sort an array of a variable length', () => {
+        const myArray1 = [1, 0, 0, 10, 20, 70];
+        const myArray2 = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+        const myArray3 = [1];
+        // CASE ONE
+        const result1 = quick_Sort(myArray1);
+        expect(result1).to.deep.equal([0, 0, 1 , 10, 20, 70]);
+        // CASE TWO
+        const result2 = quick_Sort(myArray2);
+        expect(result2).to.deep.equal([1, 2, 3, 4, 5, 6, 7, 8, 9]);
+        // CASE THREE
+        const result3 = quick_Sort(myArray3);
+        expect(result3).to.deep.equal([1]);
+    });
+    it('Should sort an array of negative integers in ascending order', () => {
+        const myArray = [-1, 2, -3];
+        const result = quick_Sort(myArray);
+        expect(result).to.deep.equal([-3, -1, 2]);
+    })
 });
